@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="wechat@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="wechat">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sakila"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="world"/>
+    <table id="9" parent="2" name="fd_group"/>
+    <table id="10" parent="2" name="im_content"/>
+    <table id="11" parent="2" name="im_friend"/>
+    <table id="12" parent="2" name="im_room"/>
+    <table id="13" parent="2" name="im_user"/>
+    <table id="14" parent="2" name="user_room"/>
+    <column id="15" parent="9" name="groupId">
+      <Position>1</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="9" name="groupName">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="9" name="userId">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="18" parent="9" name="PRIMARY">
+      <ColNames>groupId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="19" parent="10" name="contenttId">
+      <Position>1</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="10" name="roomId">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="10" name="contentCreator">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="10" name="content">
+      <Position>4</Position>
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="10" name="createTime">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <key id="24" parent="10" name="PRIMARY">
+      <ColNames>contenttId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="11" name="friendId">
+      <Position>1</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="11" name="fdLoginId">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="11" name="fdNickName">
+      <Position>4</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="11" name="groupId">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="29" parent="11" name="fd_gp_fk">
+      <ColNames>groupId</ColNames>
+    </index>
+    <key id="30" parent="11" name="PRIMARY">
+      <ColNames>friendId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="31" parent="11" name="fd_gp_fk">
+      <ColNames>groupId</ColNames>
+      <RefSchemaName>wechat</RefSchemaName>
+      <RefTableName>fd_group</RefTableName>
+      <RefColNames>groupId</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="32" parent="12" name="roomId">
+      <Position>1</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="12" name="creator">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="12" name="roomName">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="12" name="roomNum">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="12" name="createDate">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="37" parent="12" name="PRIMARY">
+      <ColNames>roomId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="13" name="userId">
+      <Position>1</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="13" name="loginId">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="13" name="password">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="13" name="nickname">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="42" parent="13" name="PRIMARY">
+      <ColNames>userId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="43" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="14" name="userId">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="14" name="roomId">
+      <Position>3</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="46" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
